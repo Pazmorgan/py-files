@@ -1,10 +1,13 @@
 # import your functions here
-print("hola.")
+from utils import files
 # read the quijote here
+book1 = files.readFile('el_quijote.txt')
+book2 = files.readFile('el_quijote_ii.txt')
+book = book1 + book2
 
 
 # Word Count
-# print('Word Count: ', files.wordCount(book))
+print('Word Count: ', files.wordCount(book))
 
 # Unique Word Count
 # print('Unique Word Count: ', files.uniqueWordCount(book))
