@@ -10,7 +10,22 @@ book = book1 + book2
 print('Word Count: ', files.wordCount(book))
 
 # Unique Word Count
-# print('Unique Word Count: ', files.uniqueWordCount(book))
+ print('Unique Word Count: ', files.uniqueWordCount(book))
+
+def palabras_unica(name):
+    contador = {}
+    
+    with open(name, 'r') as file:
+        for linea in file:
+            palabras = linea.split()
+            for palabra in palabras:
+                palabra = palabra.lower()
+                if palabra in contador:
+                    contador[palabra] += 1
+                else:
+                    contador[palabra] = 1
+    
+    return contador
 
 # Quijote count
 # print('find Content: ', files.findContent(book, 'quijote'))
