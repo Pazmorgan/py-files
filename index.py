@@ -28,8 +28,20 @@ def palabras_unica(name):
     return contador
 
 # Quijote count
-# print('find Content: ', files.findContent(book, 'quijote'))
-# print('find Content: ', files.findContent(book, 'sancho'))
+ print('find Content: ', files.findContent(book, 'quijote'))
+ print('find Content: ', files.findContent(book, 'sancho'))
+
+def contar_repeticiones_palabra_en_archivo(name, Quijote):
+    contador = 0
+    
+    with open(name, 'r') as file:
+        for linea in file:
+            palabras = linea.split()
+            for palabra in palabras:
+                if palabra == Quijote:
+                    contador += 1
+    
+    return contador
 
 # Change Quijote to Quixote and write it to a new file "el_quixote.txt"
 # print('Change Quijote to Quixote: ', files.changeQuijoteToQuixote(book))
